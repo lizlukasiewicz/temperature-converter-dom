@@ -8,7 +8,7 @@
   <title>Hello Front-End</title>
 </head>
 <body>
-  <h1>Temperature Converter</h1>
+  <h3>Temperature Converter</h3>
 
 <form id = "tempToConvertForm">
   <label for="temp"></label><br>
@@ -17,14 +17,42 @@
   <label for="fahrenheit">Fahrenheit°</label><br>
   <input  id="celsius" type="radio" name="temp" value="celsius">
   <label for="celsius">Celsius°</label><br>
-<br><br>
+  <br><br>
   <button id="submit" type="button">Submit</button>
   <button id="clear" type="button">Clear</button>
 </form>
-<div id = "results">
-  <h1 class = "results"></h1>
+<div id = "results" onclick="myFunction()">
+  <h3 class = "results"></h3>
 </div>
- 
-
+ <div id="access" onclick="myFunction()">
+   this is a div -- click on meeee
+ </div>
+ <input type="button" value="click me" id="input">
+    <button id="button">click me</button>
+    <h3 id="change"></h3>
+    <a href="#"> hi im a link</a>
+    <form id="countdown">
+      <label for="num"></label>
+    <input id="first" type="number" >
+    <input id="second" type="number" >
+    <button id="submitted" type="button" >Submit</button>
+  </form>
+ <h1></h1>
+ <h2></h2>
+ <script>
+   function myFunction(){
+     console.log("hello world")
+   }
+ </script>
 </body>
 </html>
+<!-- write jquery or js function that would allow div element with click event listener
+      to be operated using keyboard controls  tabindex="0" -->
+
+<!-- write function that would give empty heading elements
+      (<h1></h1>) a "role" attribute value of "presenmtation" -->
+
+<!-- write function that takes two integer parameters
+      starting with the sum of your two parameters,
+      print a countdown to the console - one second at a time
+      until the logs reach zero-->
