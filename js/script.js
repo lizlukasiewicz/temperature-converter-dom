@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 let inputVal = document.querySelector("#field") 
-const access = document.getElementById("access")
+//const access = document.getElementById("access")
 let input = document.getElementById("input")
 let button = document.getElementById("button")
 
@@ -29,29 +29,36 @@ document.getElementById("clear").addEventListener("click", () => {
     let resultsDiv = document.querySelector("#results")
     resultsDiv.innerText = " "
 })
-access.setAttribute("tabindex", "0")
-access.addEventListener("click", function(e){
-        console.log(e, "👾")
-        console.log(e.pointerId, "🐝")
-})
+// access.setAttribute("tabindex", "0")
+// access.addEventListener("click", function(e){
+//         console.log(e, "👾")
+//         console.log(e.pointerId, "🐝")
+// })
 const div = document.querySelectorAll("div")
+let Keys = {enter:false}
 for(let i=0; i < div.length; i++){
-    console.log(div[i], "🎃")
+    div[i].setAttribute("tabindex", "0")
     let att = div[i].attributes
     for (let j=0; j < att.length; j++){
-    if(att[j].value === "myFunction()"){
-        div[i].setAttribute("tabindex", "0")
+    if(att[j].nodeValue === "myFunction()"){
+        div[i].setAttribute("onkeypress", att[j].nodeValue)
+        div[i].onkeydown = function(e){
+            let kc = e.keyCode
+            if (kc === 13){
+                Keys.enter=true
+        }
     }
-    }
+ }
+}
 }
 //document.querySelectorAll("div")
-access.onkeydown = function(e) {
-    let kc = e.keyCode
-    if (kc === 13){
-    console.log(e, "👀")
-    console.log(e.target.value)
-    }
-}
+// access.onkeydown = function(e) {
+//     let kc = e.keyCode
+//     if (kc === 13){
+//     //console.log(e, "👀")
+//     console.log(e.target.value)
+//     }
+// }
 const heading = document.querySelectorAll("h1, h2");
 for (let i =0; i < heading.length; i++) {
         if(heading[i].innerText === ""){
